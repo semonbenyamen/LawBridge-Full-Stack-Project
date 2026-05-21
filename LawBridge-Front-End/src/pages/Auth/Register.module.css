@@ -1,0 +1,208 @@
+.container {
+    min-height: 100vh;
+    background-color: #F7F7F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    max-width: 500px;
+}
+
+.logoSection {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logoIcon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background-color: #3F2C2C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoIcon {
+    color: #C1A172;
+    font-size: 2rem;
+}
+
+.logoSection h2 {
+    font-size: 2rem;
+    color: #3F2C2C;
+    font-weight: 800;
+}
+
+.logoSection h2 span {
+    color: #C1A172;
+}
+
+.logoSection h1 {
+    margin-top: 10px;
+    font-size: 2rem;
+    color: #1a1a1a;
+}
+
+.logoSection p {
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.roleSection p {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.roles {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.roleCard {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.roleCard svg {
+    font-size: 1.5rem;
+    color: #C1A172;
+    margin-bottom: 10px;
+}
+
+.roleCard h3 {
+    margin-bottom: 5px;
+}
+
+.roleCard span {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.active {
+    border-color: #C1A172;
+    background-color: #fffaf3;
+}
+
+.nameRow {
+    display: flex;
+    gap: 15px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.group label {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #C1A172;
+}
+
+.passwordWrapper {
+    position: relative;
+}
+
+.eyeBtn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.uploadBox {
+    border: 2px dashed #ddd;
+    border-radius: 16px;
+    padding: 35px 20px;
+    text-align: center;
+    background-color: #faf8f6;
+}
+
+.uploadIcon {
+    font-size: 2rem;
+    color: #C1A172;
+    margin-bottom: 10px;
+}
+
+.uploadBox p {
+    font-weight: 600;
+}
+
+.uploadBox span {
+    color: #C1A172;
+    display: block;
+    margin: 5px 0;
+}
+
+.uploadBox small {
+    color: #999;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #777;
+    margin: 10px;
+}
+
+.btn {
+    width: 100%;
+    background-color: #3F2C2C;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #2A1E1E;
+}
+
+.footerText {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footerText a {
+    color: #C1A172;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 5px;
+}
+

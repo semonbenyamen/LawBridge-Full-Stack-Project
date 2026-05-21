@@ -4,21 +4,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 10px 15px;
+    overflow: hidden;
 }
 
 .card {
     background-color: #ffffff;
-    padding: 40px;
-    border-radius: 24px;
+    padding: 22px;
+    border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
     width: 100%;
-    max-width: 500px;
+    max-width: 460px;
 }
 
 .logoSection {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .logoIcon {
@@ -32,25 +33,25 @@
     justify-content: center;
 }
 
-.logoIcon {
+.logoIcon i {
     color: #C1A172;
     font-size: 2rem;
 }
 
+.logoSection h1 {
+    margin-top: 6px;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+}
+
 .logoSection h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #3F2C2C;
     font-weight: 800;
 }
 
 .logoSection h2 span {
     color: #C1A172;
-}
-
-.logoSection h1 {
-    margin-top: 10px;
-    font-size: 2rem;
-    color: #1a1a1a;
 }
 
 .logoSection p {
@@ -66,32 +67,34 @@
 
 .roles {
     display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 10px;
+    margin-bottom: 14px;
 }
 
 .roleCard {
     flex: 1;
     border: 1px solid #ddd;
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 10px;
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .roleCard svg {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #C1A172;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 
 .roleCard h3 {
-    margin-bottom: 5px;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
 }
 
 .roleCard span {
-    font-size: 0.85rem;
+    font-size: 0.68rem;
+    line-height: 1.2;
     color: #777;
 }
 
@@ -108,7 +111,7 @@
 .group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     width: 100%;
 }
 
@@ -120,7 +123,7 @@
 
 .input {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 12px;
     outline: none;
@@ -146,36 +149,72 @@
 
 .uploadBox {
     border: 2px dashed #ddd;
-    border-radius: 16px;
-    padding: 35px 20px;
+    border-radius: 12px;
+    padding: 6px;
     text-align: center;
     background-color: #faf8f6;
 }
 
 .uploadIcon {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #C1A172;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
 }
 
 .uploadBox p {
     font-weight: 600;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
 }
 
 .uploadBox span {
     color: #C1A172;
     display: block;
-    margin: 5px 0;
+    margin: 1px 0;
+    font-size: 0.65rem;
 }
 
 .uploadBox small {
     color: #999;
+    font-size: 0.62rem;
 }
 
 .note {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     color: #777;
-    margin: 10px;
+    margin: 2px;
+}
+
+.hiddenInput  {
+    display: none;
+}
+
+.customUpload  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    margin: 6px auto 0;
+    padding: 6px 10px;
+    background-color: #C1A172;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.customUpload:hover {
+    background-color: #a88758;
+}
+
+.fileName {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.6rem;
+    color: #555;
+    text-align: center;
+    word-break: break-word;
 }
 
 .btn {
@@ -183,7 +222,7 @@
     background-color: #3F2C2C;
     color: white;
     border: none;
-    padding: 14px;
+    padding: 12px;
     border-radius: 12px;
     cursor: pointer;
     font-weight: 700;

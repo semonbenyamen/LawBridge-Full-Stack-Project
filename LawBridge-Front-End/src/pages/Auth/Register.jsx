@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaUser, FaBriefcase, FaCloudUploadAlt } from "react-icons/fa";
+import axios from "axios";
 import styles from "./Register.module.css";
 
 
@@ -10,9 +11,30 @@ function Register() {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+    const [lawyerCard, setLawyerCard] = useState(null);
+
+// Storing form data
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        password: "",
+        confirmPassword: "",
+    });
+
+// When user types a character: stored in the state.
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Register Submitted");
+        console.log(formData);
+        console.log(lawyerCard);
     };
 
     return(
@@ -56,19 +78,26 @@ function Register() {
             <form onSubmit={handleSubmit}>
 
         {/* Names */}
+            {/*When user types the state will updated */}
                 <div className={styles.nameRow}>
                     <div className={styles.group}>
                         <label>First Name</label>
                         <input type="text"
+                        name="firstName"
                         placeholder="First name"
-                        className={styles.input} />
+                        className={styles.input}
+                        value={formData.firstName}
+                        onChange={handleChange} />
                     </div>
 
                     <div className={styles.group}>
                         <label>Last Name</label>
                         <input type="text"
+                        name="lastName"
                         placeholder="Last name"
-                        className={styles.input} />
+                        className={styles.input}
+                        value={formData.lastName}
+                        onChange={handleChange} />
                     </div>
                 </div>
 
@@ -76,16 +105,22 @@ function Register() {
                 <div className={styles.group}>
                     <label>Email Address</label>
                     <input type="text"
+                    name="email"
                     placeholder="Enter your email"
-                    className={styles.input} />
+                    className={styles.input}
+                    value={formData.email}
+                    onChange={handleChange}/>
                 </div>
 
         {/* Phone */}
                 <div className={styles.group}>
                     <label>Phone Number</label>
                     <input type="text"
+                    name="phone"
                     placeholder="+20 100 123 4567"
-                    className={styles.input} />
+                    className={styles.input}
+                    value={formData.phone}
+                    onChange={handleChange} />
                 </div>
 
         {/* Lawyer Upload */}
@@ -99,6 +134,19 @@ function Register() {
                             <p>Drag & drop your ID card here</p>
                             <span>or browse files</span>
                             <small>Accepted: jpg, jpeg, png</small>
+
+        {/* When user Upload an image stores it in lawyerCard */}
+                            <label htmlFor="fileUpload" className={styles.customUpload}>Choose File</label>
+                            <input 
+                            id="fileUpload"
+                            type="file"
+                            accept=".jpg, .jpeg, .png"
+                            className={styles.hiddenInput}
+                            onChange={(e) => setLawyerCard(e.target.files[0])} />
+
+                            {lawyerCard  && (
+                                <small className={styles.fileName}>{lawyerCard.name}</small>
+                            )}
                         </div>
 
                         <div className={styles.note}>
@@ -112,8 +160,11 @@ function Register() {
                     <label>Password</label>
                     <div className={styles.passwordWrapper}>
                         <input type={showPassword ? "text" : "password"}
+                        name="password"
                         placeholder="Create a password"
-                        className={styles.input} />
+                        className={styles.input}
+                        value={formData.password}
+                        onChange={handleChange} />
 
                         <button type="button"
                         className={styles.eyeBtn}
@@ -128,8 +179,11 @@ function Register() {
                     <label>Confirm Password</label>
                     <div className={styles.passwordWrapper}>
                         <input type= {showConfirmPassword ? "text" : "password"}
+                        name="confirmPassword"
                         placeholder="Confirm your password"
-                        className={styles.input}/>
+                        className={styles.input}
+                        value={formData.confirmPassword}
+                         onChange={handleChange}/>
 
                         <button type="button"
                         className={styles.eyeBtn}

@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import LawyerProfileSetup from "./pages/LawyerProfile/LawyerProfileSetup";
 
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
       <Route path="/register" element={<Register />} />
 
       <Route path="/forgot-password" element={<h1>Forgot Password</h1>} />
+
+      <Route path="/setup-profile" element={<LawyerProfileSetup />} />
 
       {/*If you open the empty link it will take you to the login*/}
       <Route path="/" element={<Navigate to="/login" />} />

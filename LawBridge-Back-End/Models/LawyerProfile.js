@@ -94,6 +94,12 @@ const lawyerProfileSchema = new mongoose.Schema({
         default: 0
     },
 
+// Featured lawyer for home page
+    isFeatured: {
+        type: Boolean,
+        default: false
+    },
+
 // Check if profile completed
     profileCompleted: {
         type: Boolean,

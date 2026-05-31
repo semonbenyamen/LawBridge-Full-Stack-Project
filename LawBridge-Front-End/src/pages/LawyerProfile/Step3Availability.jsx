@@ -77,10 +77,11 @@ function Step3Availability({ formData, handleChange, setFormData, prevStep, hand
                         onChange={handleChange}
                         required
                     >
-                        <option value={15}>15 Minutes</option>
+                        {/* <option value={15}>15 Minutes</option> */}
                         <option value={30}>30 Minutes</option>
-                        <option value={45}>45 Minutes</option>
+                        {/* <option value={45}>45 Minutes</option> */}
                         <option value={60}>60 Minutes</option>
+                        <option value={90}>90 Minutes</option>
                     </select>
                 </div>
 

@@ -1,0 +1,145 @@
+.card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+    border-color: #C1A172;
+}
+
+.avatar {
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #C1A172;
+}
+
+.fallback {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #3F2C2C;
+    color: #C1A172;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border: 3px solid #C1A172;
+}
+
+.badge {
+    position: absolute;
+    bottom: -4px;
+    right: -8px;
+    background-color: #C1A172;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.spec {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #C1A172;
+    background-color: #fffaf3;
+    border: 1px solid #f0e0c0;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.location {
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.location i {
+    color: #C1A172;
+    font-size: 0.75rem;
+}
+
+.meta {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.exp {
+    font-size: 0.78rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.exp i {
+    color: #888;
+    font-size: 0.7rem;
+}
+
+.fee {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #3F2C2C;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 9px;
+    background-color: #3F2C2C;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #2A1E1E;
+}

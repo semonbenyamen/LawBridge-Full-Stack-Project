@@ -5,7 +5,8 @@ const authRoutes = require ("./Routes/authRoutes");
 const errorMiddleware = require("./Middlewares/errorMiddleware");
 const path = require ("path");
 const adminRoutes = require("./Routes/adminRoutes");
-
+const lawyerProfileRoutes = require("./Routes/lawyerProfileRoutes");
+const searchRoutes = require("./Routes/searchRoutes");
 const app = express();
 
 // Middleware to read the data
@@ -38,6 +39,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // for Admin
 app.use("/api/admin", adminRoutes);
 
+app.use("/api/profile", lawyerProfileRoutes);
+
+app.use("/api/search", searchRoutes);
 // Error Middleware
 // to catch any error from all routes above to stop the server from crash
 app.use(errorMiddleware);

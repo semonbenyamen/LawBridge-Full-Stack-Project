@@ -1,8 +1,8 @@
 const joi = require("joi");
 
 
+const validateLawyerProfile = (req, res, next) => {
 // === STEP 1 : Basic Information ===
-const validateBasicInfo = (req, res, next) => {
     const schema = joi.object({
         fullName: joi.string().min(3).max(100).required(),
         primarySpecialization: joi.string().required(),
@@ -12,26 +12,10 @@ const validateBasicInfo = (req, res, next) => {
         yearsOfExperience: joi.number().min(0).max(60).required(),
 
 // allows: the field to be empty without validation error
-        bio: joi.string().max(500).allow("")
-    });
-
-    const { error, value } = schema.validate(req.body);
-
-    if(error) {
-        return res.status(400).json({
-            msg: error.details[0].message
-        });
-    }
-
-    req.body = value;
-    next();
-};
-
-
+        bio: joi.string().max(500).allow(""),
+   
 
 // ==== STEP 2 : Office Details ===
-const validateOfficeDetails  = (req, res, next) => {
-    const schema = joi.object({
         governorate: joi.string().required(),
 
 // District or area inside the governorate
@@ -47,28 +31,12 @@ const validateOfficeDetails  = (req, res, next) => {
 // lat = Latitude / lng = Longitude
             lat: joi.number().required(),
             lng: joi.number().required()
-        })
-    });
-
-    const { error, value } = schema.validate(req.body);
-
-    if(error) {
-        return res.status(400).json({
-            msg: error.details[0].message
-        });
-    }
-
-    req.body = value;
-    next();
-};
+        }).required(),
 
 
-// === STEP 3 : Availability ===
-const validateAvailability   = (req, res, next) => {
-    const schema = joi.object({
-        
+// === STEP 3 : Availability ===        
 // Array of selected working days
-        workingDays: joi.array().items(joi.string()).required,
+        workingDays: joi.array().items(joi.string()).required(),
         startTime: joi.string().required(),
         endTime: joi.string().required(),
         appointmentDuration: joi.number().valid(30, 60, 90).required(),
@@ -87,4 +55,4 @@ const validateAvailability   = (req, res, next) => {
     next();
 };
 
-module.exports = {validateBasicInfo, validateOfficeDetails, validateAvailability};
+module.exports = { validateLawyerProfile };

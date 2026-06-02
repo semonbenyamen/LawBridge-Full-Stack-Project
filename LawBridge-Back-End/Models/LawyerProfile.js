@@ -1,11 +1,10 @@
-const { required } = require("joi");
-const monggose = require("mongoose");
+const mongoose = require("mongoose");
 
-const lawyerProfileSchema = new monggose.Schema({
+const lawyerProfileSchema = new mongoose.Schema({
 
 // Connect profile with ....
     user: {
-        type: monggose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true,
         unique: true
@@ -93,6 +92,12 @@ const lawyerProfileSchema = new monggose.Schema({
     consultationFee: {
         type: Number,
         default: 0
+    },
+
+// Featured lawyer for home page
+    isFeatured: {
+        type: Boolean,
+        default: false
     },
 
 // Check if profile completed

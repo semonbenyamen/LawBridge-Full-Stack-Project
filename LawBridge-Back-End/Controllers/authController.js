@@ -36,7 +36,7 @@ const registerUser = async (req ,res, next ) => {
 
         // If Client automatically approved
             isApproved:
-            role === "client" ? false : true
+            role === "client" ? true : false
          });
 
         res.status(201).json({

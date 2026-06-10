@@ -1,6 +1,8 @@
 const User = require("../Models/User");
 const bcrypt = require ("bcryptjs");
 const jwt = require("jsonwebtoken");
+// Forgot Password
+const crypto = require("crypto");
 
 
 ////  Register a new user  ////
@@ -111,4 +113,77 @@ const loginUser = async (req, res, next) => {
         }
 };
 
-module.exports = { registerUser, loginUser };
+
+// Forgot Password
+const forgotPassword = async (req, res, next) => {
+    try{
+        const user = await User.findOne({
+            email:req.body.email
+        });
+
+        if(!user) {
+            return res.status(400).json({
+                msg: "User not found"
+            });
+        }
+
+        const resetToken = crypto
+          .randomBytes(32)
+          .toString("hex");
+
+        user.resetPasswordToken = resetToken;
+
+        user.resetPasswordExpire  = Date.now() + 15 * 60 * 100;
+
+        await user.save();
+
+        res.status(200).json({
+            msg: "Reset link generated",
+            resetToken
+        });
+
+    } catch(error) {
+        next(error);
+    }
+};
+
+
+// Reset Password
+const resetPassword = async (req, res, next) => {
+    try{
+        const {token} = req.params;
+        const {password} = req.body;
+
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetPasswordExpire: {
+                $gt: Date.now()
+            }
+        });
+
+        if(!user) {
+            return res.status(400).json({
+                msg: "Invalid or expired token"
+            });
+        }
+
+        const hashedPassword = await bcrypt.hash(password,10);
+        user.password = hashedPassword;
+
+        user.resetPasswordToken = null;
+        user.resetPasswordExpire = null;
+
+        await user.save();
+
+        res.status(200).json({
+            msg: "Password updated successfully"
+        });
+
+    } catch(error) {
+        next(error);
+    }
+};
+
+
+
+module.exports = { registerUser, loginUser, forgotPassword, resetPassword };

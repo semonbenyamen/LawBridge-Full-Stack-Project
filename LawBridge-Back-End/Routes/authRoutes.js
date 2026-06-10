@@ -1,7 +1,7 @@
 const express = require ("express");
 const router = express.Router();
 const upload = require("../Middlewares/uploadMiddleware");
-const { registerUser, loginUser } = require("../Controllers/authController");
+const { registerUser, loginUser, forgotPassword,resetPassword } = require("../Controllers/authController");
 const { validateRegister, validateLogin } = require("../Middlewares/validators/authValidator");
 
 
@@ -13,8 +13,9 @@ router.post("/register", upload.single("lawyerCardImage"), validateRegister  , r
 // Login
 router.post("/login", loginLimiter, validateLogin, loginUser);
 
+router.post("/forgot-password", forgotPassword);
 
-
+router.put("/reset-password/:token", resetPassword);
 
 module.exports = router;
 

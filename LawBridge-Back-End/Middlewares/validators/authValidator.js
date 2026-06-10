@@ -12,7 +12,9 @@ const validateRegister = (req, res, next) => {
     });
 
 // value and error together
-    const { error, value } = schema.validate(req.body);
+    const { error, value } = schema.validate(req.body, {
+        allowUnknown: true
+    });
 
     if (error) {
         return res.status(400).json({ msg: error.details[0].message});

@@ -129,6 +129,7 @@ const getFeaturedLawyers = async (req, res, next) => {
     }
 };
 
+// Get latest registered lawyers
 const getLatestLawyers = async (req, res, next) => {
     try{
         const lawyers = await LawyerProfile.find({

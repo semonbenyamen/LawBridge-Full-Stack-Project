@@ -3,6 +3,9 @@ const router = express.Router();
 
 const { approveLawyer } = require("../Controllers/adminController");
 
-router.put("/approve-lawyer/:id", approveLawyer);
+const { protect } = require("../Middlewares/authMiddleware");
+const { adminOnly } = require("../Middlewares/adminMiddleware");
+
+router.put("/approve-lawyer/:id", protect, adminOnly, approveLawyer);
 
 module.exports = router;

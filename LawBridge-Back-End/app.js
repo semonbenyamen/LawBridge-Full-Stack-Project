@@ -10,6 +10,8 @@ const searchRoutes = require("./Routes/searchRoutes");
 const app = express();
 // for file Uploads
 const fs = require("fs"); 
+// appointment
+const appointmentRoutes = require("./Routes/appointmentRoutes");
 
 // Middleware to read the data
 app.use(express.json());
@@ -47,6 +49,8 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/profile", lawyerProfileRoutes);
 
 app.use("/api/search", searchRoutes);
+
+app.use("/api/appointments", appointmentRoutes);
 // Error Middleware
 // to catch any error from all routes above to stop the server from crash
 app.use(errorMiddleware);

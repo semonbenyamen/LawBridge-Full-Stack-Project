@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./ForgotPassword.module.css";
 import { useState } from "react";
@@ -48,7 +47,7 @@ function ForgotPassword() {
                 </form>
 
                 <div className={styles.footer}>
-                    <link to="/login">Back to Login</link>
+                    <Link to="/login">Back to Login</Link>
                 </div>
             </div>
         </div>

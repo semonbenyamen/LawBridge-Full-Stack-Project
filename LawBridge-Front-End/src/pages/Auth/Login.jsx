@@ -59,10 +59,6 @@ const [showPassword, setShowPassword] = useState(false);
           <div className={styles.group}>
             <label>Password</label>
             
-            {/* <div className={styles.passwordHeader}>
-              
-              
-            </div> */}
 
             <div className={styles.passwordWrapper}>
               <input

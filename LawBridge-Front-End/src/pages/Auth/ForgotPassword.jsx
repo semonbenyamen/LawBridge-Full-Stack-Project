@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import styles from "./ForgotPassword.module.css";
 import { useState } from "react";
@@ -10,7 +11,11 @@ function ForgotPassword() {
 
         console.log("Reset Email:", email);
 
-        alert("Reset link sent successfully");
+        Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Reset link sent successfully"
+        });
     };
 
     return (

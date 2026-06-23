@@ -1,6 +1,6 @@
 import React from "react";
-import LawyerCard from "../../components/LawyerCard/LawyerCard";
-import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
+import LawyerCard from "../../components/UI/LawyerCard/LawyerCard";
+import SkeletonCard from "../../components/UI/SkeletonCard/SkeletonCard";
 import { lawyers } from "../../data/lawyers";
 import styles from "./Home.module.css";
 
